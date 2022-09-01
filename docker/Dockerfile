@@ -4,6 +4,8 @@
 FROM ros:melodic
 
 # Install PCL & Eigen & essential libraries
+WORKDIR /etc/apt
+ADD ./sources.list /etc/apt/ 
 RUN apt-get update && apt-get install -y cmake libeigen3-dev libpcl-dev \
     ros-melodic-rviz ros-melodic-pcl-ros ros-melodic-eigen-conversions \
     libatlas-base-dev libgoogle-glog-dev libsuitesparse-dev libglew-dev wget
